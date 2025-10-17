@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cursos</title>
+    <!-- Font Inter para um visual moderno e limpo -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <!-- Container Principal Centralizado -->
+    <div class="app">
+        <header>
+            <!-- Título Principal -->
+            <h1 class="main-title">
+                Cursos
+            </h1>
+        </header>
+        <!-- Cartão da Tabela -->
+        <section class="card-table">
+            <table class="course-table">
+                <!-- Cabeçalho da Tabela -->
+                <thead>
+                    <tr>
+                        <th>Curso</th>
+                        <th>Categoria</th>
+                        <th>Professor(a)</th>
+                        <th>Ativo</th>
+                        <th>Incio</th>
+                        <th>Endereço</th>
+                        <th>Editar</th>
+                    </tr>
+                </thead>
+                <!-- Corpo da Tabela -->
+                <tbody id="course-list">
+                    <tr>
+                        <td>React</td>
+                        <td>Front-end</td>
+                        <td>Diego Fernandes</td>
+                        <td>Sim</td>
+                        <td>Desde 17/10/2025</td>
+                        <td class="watch"><a href="https://www.w3schools.com/" target="_blank">
+                                <i class="material-icons">play_circle_outline</i>
+                                Estudar
+                            </a>
+                        </td>
+                        <td class="edit-link"><a href="./page/course.html?id=13">
+                                <i class="material-icons">edit</i>
+                                <!--https://www.w3schools.com/icons/icons_reference.asp -->
+                                Editar
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Java</td>
+                        <td>Back-end</td>
+                        <td>Daniele Leão</td>
+                        <td>Sim</td>
+                        <td>Desde 17/10/2025</td>
+                        <td class="watch"><a href="https://www.w3schools.com/" target="_blank">
+                                <i class="material-icons">play_circle_outline</i>
+                                Estudar
+                            </a>
+                        </td>
+                        <td class="edit-link"><a href="./page/course.html?id=13">
+                                <i class="material-icons">edit</i>
+                                Editar
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Go</td>
+                        <td>Back-end</td>
+                        <td>Sem professor</td>
+                        <td>Não</td>
+                        <td>Desde 17/10/2025</td>
+                        <td class="watch"><a href="https://www.w3schools.com/" target="_blank">
+                                <i class="material-icons">play_circle_outline</i>
+                                Estudar
+                            </a>
+                        </td>
+                        <td class="edit-link"><a href="./page/course.html?id=13">
+                                <i class="material-icons">edit</i>
+                                Editar
+                            </a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Botão "Novo curso" para abrir modal -->
+        <button class="new-course-button">
+            Novo curso
+        </button>
+        <!-- modal dialog da pagina -->
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog -->
+        <dialog>
+            <header>
+                <h2>Novo Curso</h2>
+                <button autofocus>
+                    <i class="material-icons">clear</i>
+                </button>
+            </header>
+            <section>
+                <form method="dialog" id="my-form">
+                    <div class="input-group">
+                        <input type="text" name="course-name"  id="course-name" placeholder="Nome do Curso" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="category-course"  id="category-course" placeholder="Categoria" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="instructor-course"  id="instructor-course" placeholder="Professor(a)" required>
+                    </div>
+                    <div class="input-group">
+                        <select name="status-course" id="status-course"  required>
+                            <option value="yes">Ativo</option>
+                            <option value="no">Desativado</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <input type="url" name="course-url" id="course-url" placeholder="Endereço do Curso" required>
+                    </div>
+                    <div class="form-buttons">
+                        <button class="submit-button" type="submit">Salvar</button>
+                        <button class="cancel-button" type="reset">Limpar</button>
+                    </div>
+                </form>
+            </section>
+        </dialog>
+    </div>
+
+</body>
+<script src="./assets/js/app.js"></script>
+</html>
