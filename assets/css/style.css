@@ -1,0 +1,352 @@
+/* Variáveis de Cor para facilitar a manutenção */
+:root {
+    --page-bg: #12091c;
+    /* Fundo da página: Roxo escuro, quase preto */
+    --card-bg: #1e0a38;
+    /* Cor principal para o cartão/tabela */
+    --primary-accent: #6e26b8;
+    /* Cor de destaque (título, botão, cabeçalho da tabela) */
+    --title-text: #c8b6ff;
+    /* Cor do texto do título */
+    --default-text: #e0e0e0;
+    /* Cor do texto input */
+    --default-text-input: #ffffff;
+    /* Cor do texto principal */
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* mudar cor da barra de rolagem */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--card-bg);
+    /* Cor de fundo */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Cor do polegar */
+    border-radius: 10px;
+}
+
+/* Estilos Globais e Reset */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--page-bg);
+    color: var(--default-text);
+    margin: 0;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    /* Garante que padding e border não aumentem o tamanho total */
+    scrollbar-color: #888 #f0f0f0;
+    /* Define a cor do polegar e do trilho ou Cor do "thumb" e cor do "track" */
+    scrollbar-color: #888 #f1f1f1;
+    /*
+  scrollbar-width: thin; /* Outros valores: 'auto', 'none' */
+}
+
+/* Container Principal */
+.app {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título Principal */
+.main-title {
+    font-size: 2.25rem;
+    /* text-4xl para desktop, 3xl para mobile */
+    font-weight: 600;
+    /* font-semibold */
+    margin-bottom: 3rem;
+    /* sm:mb-12 */
+    color: var(--title-text);
+    text-align: center;
+}
+
+/* Cartão da Tabela */
+.card-table {
+    background-color: var(--card-bg);
+    border-radius: 0.75rem;
+    /* rounded-xl */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+    /* shadow-2xl personalizado para fundo escuro */
+    overflow: hidden;
+    width: 100%;
+    /* max-width: 768px; */
+    /* max-w-2xl */
+}
+
+/* Tabela */
+.course-table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Para remover o espaçamento entre as células */
+}
+
+/* Cabeçalho da Tabela */
+.course-table thead tr {
+    background-color: var(--primary-accent);
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    /* text-sm */
+    font-weight: 500;
+    /* font-medium */
+    letter-spacing: 0.05em;
+    /* tracking-wider */
+}
+
+.course-table th {
+    padding: 1rem 1.5rem;
+    text-align: left;
+}
+
+.course-table th:first-child {
+    border-top-left-radius: 0.75rem;
+    /* rounded-tl-xl */
+}
+
+.course-table th:last-child {
+    border-top-right-radius: 0.75rem;
+    /* rounded-tr-xl */
+}
+
+/* Linhas do Corpo da Tabela */
+.course-table td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 150ms ease-in-out;
+}
+
+.course-table tbody tr:hover {
+    background-color: rgba(30, 10, 56, 0.7);
+    /* Cor de hover baseada em card-bg/70 */
+}
+
+/* Removendo a borda da última linha */
+.course-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Links de Ação */
+td.edit-link a,
+td.watch a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-accent);
+    font-weight: 500;
+    /* font-medium */
+    text-decoration: none;
+    transition: color 200ms;
+
+}
+
+td.edit-link:hover a:hover,
+td.watch:hover a:hover {
+    color: rgba(220, 212, 227, 0.849);
+    /* hover:text-primary-accent/80 */
+}
+
+/* Botão */
+.new-course-button {
+    font-size: 1rem;
+    margin-top: 2.5rem;
+    /* mt-10 */
+    padding: 0.75rem 2rem;
+    /* py-3 px-8 */
+    background-color: var(--primary-accent);
+    color: white;
+    font-weight: 500;
+    /* font-medium */
+    border-radius: 0.5rem;
+    /* rounded-lg */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+    /* shadow-lg */
+    transition: background-color 300ms, transform 300ms;
+}
+
+.new-course-button:hover {
+    background-color: rgba(110, 38, 184, 0.8);
+    /* hover:bg-primary-accent/80 */
+    transform: scale(1.02);
+}
+
+.new-course-button:active {
+    transform: scale(0.98);
+}
+
+/* Configuracao modal da pagina */
+dialog::backdrop {
+    background-image: linear-gradient(45deg,
+            magenta,
+            rebeccapurple,
+            dodgerblue,
+            green);
+    opacity: 0.75;
+}
+
+/* Modal estilos */
+dialog {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    background-color: var(--card-bg);
+}
+
+dialog header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--title-text);
+}
+
+dialog header h2 {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+dialog header button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--default-text);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form .input-group {
+    font-weight: 600;
+    color: var(--default-text);
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+form .input-group input,
+select {
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--page-bg);
+    color: var(--default-text);
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: var(--default-text-input);
+    opacity: 0.9;
+}
+
+form .form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+form .form-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 300ms, transform 300ms;
+}
+
+form .form-buttons .cancel-button {
+    background-color: var(--border-color);
+    color: var(--default-text);
+}
+
+form .form-buttons .cancel-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+form .form-buttons .submit-button {
+    background-color: var(--primary-accent);
+    color: white;
+}
+
+form .form-buttons .submit-button:hover {
+    background-color: rgba(110, 38, 184, 0.8);
+}
+
+/* link desativado */
+.isDisabled {
+  color: currentColor;
+  cursor: not-allowed;
+  opacity: 0.3;
+  text-decoration: none;
+}
+
+/* Media Query para Responsividade */
+@media (max-width: 640px) {
+    .main-title {
+        font-size: 2.5rem;
+        /* sm:text-4xl */
+        margin-bottom: 3rem;
+        /* sm:mb-12 */
+    }
+
+    .new-course-button {
+        margin-top: 4rem;
+        /* sm:mt-16 */
+    }
+
+    .card-table {
+        width: 100%;
+        /* Define uma largura, mas não é obrigatório */
+        overflow-x: auto;
+        /* Cria a barra de rolagem horizontal se necessário */
+    }
+
+    .table {
+        /* max-width: 768px; */
+        /* scrollbar-width: thin; */
+        overflow: auto;
+
+        width: 1000px;
+        /* Define uma largura maior que o contêiner para forçar a rolagem */
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+}

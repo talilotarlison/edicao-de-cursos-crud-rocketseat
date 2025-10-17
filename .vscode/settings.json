@@ -1,0 +1,31 @@
+{
+  "workbench.colorTheme": "Monaki",
+  "files.autoSave": "afterDelay",
+  "workbench.iconTheme": "none",
+  "files.autoSaveDelay": 1000, // Atraso de 1 segundo para auto save
+  "editor.renderWhitespace": "none", // Desativa a exibição de espaços em branco para melhorar o desempenho
+  "editor.minimap.enabled": false, // Desativa o minimap
+  "editor.rulers": [], // Remove as linhas verticais do editor
+  "editor.wordWrap": "on", // Ativa o word wrap (quebra automática de linhas)
+  "editor.cursorBlinking": "solid", // Desativa o efeito de piscamento do cursor
+  "editor.fontSize": 14, // Ajuste a fonte para um tamanho confortável
+  "editor.lineHeight": 22, // Ajuste a altura das linhas para otimizar o desempenho
+  "editor.fontFamily": "Consolas, 'Courier New', monospace", // Fontes mais leves para desempenho
+  "editor.smoothScrolling": false, // Desativa o scroll suave
+  "files.trimTrailingWhitespace": true, // Remove espaços em branco extras ao salvar
+  "files.insertFinalNewline": true, // Garante que um nova linha seja inserida no final do arquivo
+  "window.zoomLevel": 0, // Ajusta o nível de zoom (neutro)
+  "explorer.compactFolders": false, // Não compacta pastas, para melhorar a navegação
+  "search.quickOpen.includeSymbols": false, // Desativa a busca por símbolos na quick open para melhorar o desempenho
+  "search.followSymlinks": false, // Desativa o seguimento de links simbólicos
+  "git.enabled": false, // Desativa o git se você não precisar dele
+  "extensions.autoUpdate": false, // Desativa a atualização automática de extensões
+  "extensions.ignoreRecommendations": true, // Ignora recomendações de extensões para reduzir consumo de recursos
+  "terminal.integrated.rendererType": "dom", // Usa o renderizador mais leve para o terminal
+  "terminal.integrated.scrollback": 1000, // Limita o histórico de rolagem no terminal
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+  }
+}

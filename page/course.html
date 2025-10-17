@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Inter para um visual moderno e limpo -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/edit.css">
+    <title>Editar Curso</title>
+</head>
+
+<body>
+
+    <body>
+        <!-- Container Principal Centralizado -->
+        <div class="app">
+            <header>
+                <!-- Título Principal -->
+                <h1 class="main-title">
+                    Cursos
+                </h1>
+            </header>
+            <!-- Cartão da Tabela -->
+            <section class="sesson-form">
+                <header>
+                    <!-- Título Principal -->
+                    <h2 class="title-edit">
+                        Editar Curso
+                    </h2>
+                </header>
+                <form method="dialog">
+                    <div class="input-group">
+                        <input type="text" name="course-name" id="course-name" placeholder="Nome do Curso" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="category-course" id="category-course" placeholder="Categoria" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="instructor-course" id="instructor-course" placeholder="Professor(a)" required>
+                    </div>
+                    <div class="input-group">
+                        <select name="status-course" id="status-course" required>
+                            <option value="yes">Ativo</option>
+                            <option value="no">Desativado</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <input type="url" name="course-url" id="course-url" placeholder="Endereço do Curso" required>
+                    </div>
+                    <div class="form-buttons">
+                        <button class="cancel-button" type="button"
+                            onclick="window.location.href='../index.html'">Cancelar</button>
+                        <button class="submit-button" type="submit" id="btn-save">Salvar</button>
+                        <button class="excluir-button" type="submit" id="delete-course-button">Excluir Curso</button>
+                    </div>
+                </form>
+            </section>
+
+        </div>
+
+    </body>
+    <script src="../assets/js/edit-courses.js"></script>
+</body>
+
+</html>
